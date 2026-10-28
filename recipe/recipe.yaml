@@ -21,7 +21,7 @@ requirements:
       then:
         - cross-python_${{ host_platform }}
         - python
-        - cython
+        - cython >=3.0
         - numpy
         - embree
     - ${{ stdlib('c') }}
@@ -29,10 +29,10 @@ requirements:
     - ${{ compiler('cxx') }}
   host:
     - python
-    - setuptools
+    - setuptools >=59.0
     - pip
     - embree
-    - cython
+    - cython >=3.0
     - numpy
   run:
     - python
