@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.4.0"
+  version: "4.4.0.post1"
 
 package:
   name: embreex
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/trimesh/embreex/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 8434e8ce31cb9e6dc878efd2e9776e4bce146132d3c300e8762969ed0d2be25b
+  sha256: 214960eab9e7d070b845afb1f3b9d5178ce4108c4e8d6b54bc2932f63a8809c2
 
 build:
   number: 1
@@ -21,7 +21,7 @@ requirements:
       then:
         - cross-python_${{ host_platform }}
         - python
-        - cython
+        - cython >=3.0
         - numpy
         - embree
     - ${{ stdlib('c') }}
@@ -29,10 +29,10 @@ requirements:
     - ${{ compiler('cxx') }}
   host:
     - python
-    - setuptools
+    - setuptools >=59.0
     - pip
     - embree
-    - cython
+    - cython >=3.0
     - numpy
   run:
     - python
